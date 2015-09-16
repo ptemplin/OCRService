@@ -7,13 +7,14 @@ import classification.ImprovedNeuralNetwork;
 
 public class SavingUtils {
 	
-	public static String networkFilePath = "public\\states\\32x32-binary.nn";
+	public static String networkFilePath = "\\public\\states\\32x32-binary.nn";
 	
 	public static void loadNetworkState(ImprovedNeuralNetwork network) {
 		System.out.println("Loading network state...");
 		// open the stream
 		Scanner reader = null;
 		try {
+			System.out.println(new File(".").getPath());
 			reader = new Scanner(new File(networkFilePath));
 		} catch (IOException e) {
 			e.printStackTrace();
