@@ -18,16 +18,18 @@ public class Application extends Controller {
 
     public static Result classify() {
     	
+    	// parse the requests body
     	RequestBody body = request().body();
-    	String classification = body.asText();
+    	String data = body.asText();
     	
-//    	String[] inputs = data.split(" ");
-//        InputData imageData = new InputData(0);
-//        setInputData(imageData, inputs);
-//        if (session == null) {
-//        	session = new Session(OUTPUT_SIZE);
-//        }
-//        String classification = session.classify(imageData);
+    	// start a session and classify the data
+    	String[] inputs = data.split(" ");
+        InputData imageData = new InputData(0);
+        setInputData(imageData, inputs);
+        if (session == null) {
+        	session = new Session(OUTPUT_SIZE);
+        }
+        String classification = session.classify(imageData);
         return ok(index.render("This is a " + classification));
     }
     
