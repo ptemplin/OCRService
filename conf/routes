@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-*	/classify					controllers.Application.classify()
+POST	/classify					controllers.Application.classify()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
