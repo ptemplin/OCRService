@@ -4,6 +4,7 @@ import classification.Session;
 import data.InputData;
 import play.*;
 import play.mvc.*;
+import play.mvc.Http.RequestBody;
 import views.html.*;
 
 public class Application extends Controller {
@@ -15,14 +16,18 @@ public class Application extends Controller {
 		return ok(index.render("Server is up and running"));
 	}
 
-    public static Result classify(String data) {
-    	String[] inputs = data.split(" ");
-        InputData imageData = new InputData(0);
-        setInputData(imageData, inputs);
-        if (session == null) {
-        	session = new Session(OUTPUT_SIZE);
-        }
-        String classification = session.classify(imageData);
+    public static Result classify() {
+    	
+    	RequestBody body = request().body();
+    	String classification = body.asText();
+    	
+//    	String[] inputs = data.split(" ");
+//        InputData imageData = new InputData(0);
+//        setInputData(imageData, inputs);
+//        if (session == null) {
+//        	session = new Session(OUTPUT_SIZE);
+//        }
+//        String classification = session.classify(imageData);
         return ok(index.render("This is a " + classification));
     }
     
