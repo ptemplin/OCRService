@@ -7,14 +7,14 @@ import classification.ImprovedNeuralNetwork;
 
 public class SavingUtils {
 	
-	public static String networkFilePath = "\\public\\states\\32x32-binary.nn";
+	public static String networkFilePath = "C:\\Projects\\OCRPlayServer\\public\\states\\32x32-binary.nn";
 	
 	public static void loadNetworkState(ImprovedNeuralNetwork network) {
 		System.out.println("Loading network state...");
 		// open the stream
 		Scanner reader = null;
 		try {
-			System.out.println(new File(".").getPath());
+			System.out.println("Current dir: " + new File(".").getCanonicalPath());
 			reader = new Scanner(new File(networkFilePath));
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -36,6 +36,7 @@ public class SavingUtils {
 			reader.close();
 		}
 		
+		System.out.println("Finished loading network state from file");
 	}
 
 }

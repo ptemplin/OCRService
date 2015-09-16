@@ -29,8 +29,10 @@ public class Application extends Controller {
         if (session == null) {
         	session = new Session(OUTPUT_SIZE);
         }
+        System.out.println("Classifying image data");
         String classification = session.classify(imageData);
-        return ok(index.render("This is a " + classification));
+        System.out.println("Classified as: " + classification);
+        return ok("This is a " + classification);
     }
     
     private static void setInputData(InputData data, String[] inputs) {
