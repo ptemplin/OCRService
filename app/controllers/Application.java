@@ -9,7 +9,7 @@ import views.html.*;
 
 public class Application extends Controller {
 	
-	static Session session;
+	public static Session session;
 	public static final int OUTPUT_SIZE = 2;
 	
 	public static Result index() {
