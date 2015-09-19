@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.Map;
+
 import classification.Session;
 import data.InputData;
 import play.*;
@@ -20,7 +22,9 @@ public class Application extends Controller {
     	
     	// parse the requests body
     	RequestBody body = request().body();
-    	String data = body.asText();
+    	//String data = body.asText();
+    	Map<String, String[]> values = body.asFormUrlEncoded();
+    	String data = values.get("data")[0];
     	if (data == null) {
     		System.out.println("No image data received in post");
     		return ok("No image data received");
