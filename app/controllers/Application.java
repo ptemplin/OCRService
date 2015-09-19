@@ -21,6 +21,10 @@ public class Application extends Controller {
     	// parse the requests body
     	RequestBody body = request().body();
     	String data = body.asText();
+    	if (data == null) {
+    		System.out.println("No image data received in post");
+    		return ok("No image data received");
+    	}
     	
     	// start a session and classify the data
     	String[] inputs = data.split(" ");
