@@ -1,9 +1,5 @@
 package classification;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import data.DigitImage;
 import data.InputData;
 
 public class ImprovedNeuralNetwork {

@@ -1,4 +1,5 @@
-This is your new Play application
-=====================================
+#OCR Service
 
-This file will be packaged with your application, when using `play dist`.
+Provides a web API for classification of character images. Classifiers come from the CharacterRecognition project.
+
+Currently hosted at http://ocr-play-server.herokuapp.com
