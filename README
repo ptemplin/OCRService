@@ -1,4 +1,4 @@
-#OCR Service
+# OCR Service
 
 Provides a web API for classification of character images. Classifiers come from the CharacterRecognition project.
 
